@@ -24,7 +24,7 @@ if (UNIX)
 endif ()
 
 #------------------------------------------------------------------------------
-# Required CPM Setup - See: http://github.com/iauns/cpm
+# Required CPM Setup - See: http://github.com/CIBC-Internal/cpm
 #------------------------------------------------------------------------------
 set(CPM_DIR "${CMAKE_CURRENT_BINARY_DIR}/cpm-packages" CACHE TYPE STRING)
 find_package(Git)
@@ -35,15 +35,15 @@ if ((NOT DEFINED CPM_MODULE_CACHE_DIR) AND (NOT "$ENV{CPM_CACHE_DIR}" STREQUAL "
   set(CPM_MODULE_CACHE_DIR "$ENV{CPM_CACHE_DIR}")
 endif()
 if ((NOT EXISTS ${CPM_DIR}/CPM.cmake) AND (DEFINED CPM_MODULE_CACHE_DIR))
-  if (EXISTS "${CPM_MODULE_CACHE_DIR}/github_iauns_cpm")
+  if (EXISTS "${CPM_MODULE_CACHE_DIR}/github_cibcinternal_cpm")
     message(STATUS "Found cached version of CPM.")
-    file(COPY "${CPM_MODULE_CACHE_DIR}/github_iauns_cpm/" DESTINATION ${CPM_DIR})
+    file(COPY "${CPM_MODULE_CACHE_DIR}/github_cibcinternal_cpm/" DESTINATION ${CPM_DIR})
   endif()
 endif()
 if (NOT EXISTS ${CPM_DIR}/CPM.cmake)
-  message(STATUS "Cloning repo (https://github.com/iauns/cpm)")
+  message(STATUS "Cloning repo (https://github.com/CIBC-Internal/cpm)")
   execute_process(
-    COMMAND "${GIT_EXECUTABLE}" clone https://github.com/iauns/cpm ${CPM_DIR}
+    COMMAND "${GIT_EXECUTABLE}" clone https://github.com/CIBC-Internal/cpm ${CPM_DIR}
     RESULT_VARIABLE error_code
     OUTPUT_QUIET ERROR_QUIET)
   if(error_code)
@@ -58,8 +58,8 @@ CPM_AddModule("es_acorn"
 
 # ++ EXTERNAL-MODULE: Google Test
 CPM_AddModule("google_test"
-  GIT_REPOSITORY "https://github.com/iauns/cpm-google-test"
-  GIT_TAG "1.0.2"
+  GIT_REPOSITORY "https://github.com/CIBC-Internal/cpm-google-test"
+  GIT_TAG "origin/master"
   USE_EXISTING_VER TRUE)
 
 CPM_Finish()

@@ -1,4 +1,5 @@
 #include "Acorn.hpp"
+#include <string>
 
 namespace es      = CPM_ES_NS;
 namespace systems = CPM_ES_SYSTEMS_NS;

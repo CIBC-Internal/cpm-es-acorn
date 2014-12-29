@@ -36,20 +36,20 @@ endif()
 # ++ MODULE: Entity System
 CPM_AddModule("es"
   GIT_REPOSITORY "https://github.com/CIBC-Internal/cpm-entity-system"
-  GIT_TAG "origin/master"
+  GIT_TAG "origin/SCIRun"
   USE_EXISTING_VER TRUE
   EXPORT_MODULE TRUE)
 
 # ++ MODULE: ES Cereal
 CPM_AddModule("es_cereal"
   GIT_REPOSITORY "https://github.com/CIBC-Internal/cpm-es-cereal"
-  GIT_TAG "origin/master"
+  GIT_TAG "origin/SCIRun"
   EXPORT_MODULE TRUE)
 
 # ++ MODULE: ES Systems
 CPM_AddModule("es_systems"
   GIT_REPOSITORY "https://github.com/CIBC-Internal/cpm-es-systems"
-  GIT_TAG "origin/master"
+  GIT_TAG "origin/SCIRun"
   USE_EXISTING_VER TRUE
   EXPORT_MODULE TRUE)
 
